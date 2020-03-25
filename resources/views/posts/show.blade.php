@@ -10,5 +10,6 @@
         <p>{{$post->paragraph}}</p>
         <p>Creato il: {{$post->created_at}}</p>
     </div>
+    <button type="button" name="button"><a href="{{route('posts.index')}}">Home</a> </button>
 </div>
 @endsection
