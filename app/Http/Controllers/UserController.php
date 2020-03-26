@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Photo;
 use App\User;
+use App\Photo;
 
-class PhotoController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +15,8 @@ class PhotoController extends Controller
      */
     public function index()
     {
-    $photos = Photo::all();
-
-    return view('photos.index', compact('photos'));
+    $users = User::all();
+    return view('users.index', compact('users'));
     }
 
     /**
@@ -47,12 +46,12 @@ class PhotoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Photo $photo)
+    public function show(User $user)
     {
-      if(empty($photo)) {
+    if (empty($user)) {
       abort('404');
-      }
-      return view('photos.show', compact('photo'));
+    }
+    return view('users.show', compact('user'));
     }
 
     /**
